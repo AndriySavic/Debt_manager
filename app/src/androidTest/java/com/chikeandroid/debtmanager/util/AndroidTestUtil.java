@@ -40,7 +40,6 @@ public class AndroidTestUtil {
 
     public static Matcher<Object> withCollapsingToolbarLayoutTitle(final Matcher<CharSequence> textMatcher) {
         return new BoundedMatcher<Object, CollapsingToolbarLayout>(CollapsingToolbarLayout.class) {
-
             @Override public boolean matchesSafely(CollapsingToolbarLayout toolbar) {
                 return textMatcher.matches(toolbar.getTitle());
             }
@@ -55,7 +54,6 @@ public class AndroidTestUtil {
 
         onView(isAssignableFrom(CollapsingToolbarLayout.class)).check(matches(
                 withCollapsingToolbarLayoutTitle(Matchers.<CharSequence>is(StringUtil.commaNumber(AMOUNT1)))));
-
         onView(withText(NOTE1)).check(matches(isDisplayed()));
 
         String dateCreated = TimeUtil.dateToString(CREATED_YEAR, CREATED_MONTH - 1, CREATED_DAY_OF_MONTH);
@@ -76,7 +74,6 @@ public class AndroidTestUtil {
         }
 
         onView(withId(R.id.et_full_name)).perform(typeText(name), closeSoftKeyboard());
-
         onView(withId(R.id.et_phone_number)).perform(typeText(phoneNumber), closeSoftKeyboard());
         onView(withId(R.id.et_amount)).perform(typeText(String.valueOf(amount)), closeSoftKeyboard());
         onView(withId(R.id.et_comment)).perform(typeText(comment), closeSoftKeyboard());
@@ -87,7 +84,6 @@ public class AndroidTestUtil {
         onView(withId(android.R.id.button1)).perform(click());
 
         onView(withId(R.id.btn_date_created)).perform(click());
-
         onView(withClassName(Matchers.equalTo(DatePicker.class.getName()))).perform(
                 PickerActions.setDate(CREATED_YEAR, CREATED_MONTH, CREATED_DAY_OF_MONTH));
         onView(withId(android.R.id.button1)).perform(click());
