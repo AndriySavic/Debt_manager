@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="spacing_small">3dp</dimen>
+    <dimen name="spacing_xsmall">2dp</dimen>
+    <dimen name="spacing_medium">4dp</dimen>
+    <dimen name="spacing_middle">10dp</dimen>
+    <dimen name="spacing_large">16dp</dimen>
+    <dimen name="spacing_mlarge">20dp</dimen>
+    <dimen name="spacing_xlarge">32dp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
+    <dimen name="font_large">16sp</dimen>
+
+    <integer name="scroll_delay">300</integer>
+
+    <dimen name="font_larger">18sp</dimen>
+    <dimen name="small_5dp">5dp</dimen>
+
+    <dimen name="grid_1_half">4dp</dimen>
+    <dimen name="grid_1">8dp</dimen>
+    <dimen name="grid_2">16dp</dimen>
+    <dimen name="grid_5_half">20dp</dimen>
+    <dimen name="grid_3_half">12dp</dimen>
+
+    <!-- TextViews -->
+    <dimen name="text_view_corner_radius">@dimen/grid_1_half</dimen>
+
+    <!-- Typography-->
+    <dimen name="caption">12sp</dimen>
+    <dimen name="body">14sp</dimen>
+    <dimen name="subhead">16sp</dimen>
+    <dimen name="headline">18sp</dimen>
+    <dimen name="editorial_subhead">20sp</dimen>
+    <dimen name="editorial_headline">22sp</dimen>
+
+    <dimen name="body_line_spacing_extra">2dp</dimen>
+
+    <dimen name="person_recycler_item_size">192dp</dimen>
+</resources>
