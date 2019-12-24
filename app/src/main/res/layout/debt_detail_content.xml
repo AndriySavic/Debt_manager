@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+                name="PersonDebt"
+                type="com.chikeandroid.debtmanager.data.PersonDebt"/>
+
+        <import type="com.chikeandroid.debtmanager.util.TimeUtil"/>
+
+        <import type="com.chikeandroid.debtmanager.util.StringUtil"/>
+    </data>
+
+    <LinearLayout
+            android:orientation="horizontal"
+            android:background="@color/grey_bg"
+            android:layout_width="match_parent"
+            android:baselineAligned="false"
+            android:layout_height="match_parent">
+
+        <LinearLayout
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="@dimen/spacing_medium">
+
+            <android.support.v7.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    app:cardCornerRadius="@dimen/spacing_medium"
+                    app:cardElevation="@dimen/spacing_xsmall"
+                    app:cardUseCompatPadding="true">
+
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                    <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="@dimen/spacing_medium"
+                            android:layout_marginLeft="@dimen/spacing_large"
+                            android:layout_marginRight="@dimen/spacing_large"
+                            android:layout_marginTop="@dimen/spacing_large"
+                            android:text="@string/title_details"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+                            android:textColor="@color/material_grey_800"/>
+
+                    <View
+                            android:layout_width="match_parent"
+                            android:layout_height="2dp"
+                            android:background="@color/grey_soft"/>
+
+                    <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal"
+                            android:padding="5dp"
+                            tools:ignore="UseCompoundDrawables">
+
+                        <ImageView
+                                android:layout_width="@dimen/spacing_mlarge"
+                                android:layout_height="@dimen/spacing_mlarge"
+                                android:layout_margin="@dimen/spacing_middle"
+                                android:contentDescription="@string/avatar_icon_content_description"
+                                android:src="@drawable/ic_person"/>
+
+                        <TextView
+                                android:id="@+id/description_1"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="@dimen/spacing_medium"
+                                android:text="@{PersonDebt.person.fullname}"
+                                tools:text="Chike Mgbemena"
+                                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                                android:textColor="@color/material_grey_600"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal"
+                            android:padding="5dp"
+                            tools:ignore="UseCompoundDrawables">
+
+                        <ImageView
+                                android:layout_width="@dimen/spacing_mlarge"
+                                android:layout_height="@dimen/spacing_mlarge"
+                                android:layout_margin="@dimen/spacing_middle"
+                                android:src="@drawable/ic_description"
+                                android:contentDescription="@string/document_icon_content_description"/>
+
+                        <TextView
+                                android:id="@+id/tv_comment"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="@dimen/spacing_medium"
+                                android:text='@{StringUtil.isEmpty(PersonDebt.debt.note) ? "No comment" : PersonDebt.debt.note}'
+                                tools:text="food money"
+                                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                                android:textColor="@color/material_grey_600"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal"
+                            android:padding="5dp"
+                            tools:ignore="UseCompoundDrawables">
+
+                        <ImageView
+                                android:layout_width="@dimen/spacing_mlarge"
+                                android:layout_height="@dimen/spacing_mlarge"
+                                android:layout_margin="@dimen/spacing_middle"
+                                android:src="@drawable/ic_date_range"
+                                android:contentDescription="@string/date_icon_content_description"/>
+
+                        <TextView
+                                android:id="@+id/tv_date_created"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="@dimen/spacing_medium"
+                                android:text='@{TimeUtil.millis2String(PersonDebt.debt.createdDate) + " (Created)"}'
+                                tools:text="Mar 29, 2017"
+                                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                                android:textColor="@color/material_grey_600"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal"
+                            android:padding="5dp"
+                            tools:ignore="UseCompoundDrawables">
+
+                        <ImageView
+                                android:layout_width="@dimen/spacing_mlarge"
+                                android:layout_height="@dimen/spacing_mlarge"
+                                android:layout_margin="@dimen/spacing_middle"
+                                android:src="@drawable/ic_date_range"
+                                android:contentDescription="@string/date_icon_content_description"/>
+
+                        <TextView
+                                android:id="@+id/tv_date_due"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="@dimen/spacing_medium"
+                                android:text='@{TimeUtil.millis2String(PersonDebt.debt.dueDate) + " (Due Date)"}'
+                                tools:text="Dec 29, 2017"
+                                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                                android:textColor="@color/material_grey_600"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal"
+                            android:padding="5dp"
+                            tools:ignore="UseCompoundDrawables">
+
+                        <ImageView
+                                android:layout_width="@dimen/spacing_mlarge"
+                                android:layout_height="@dimen/spacing_mlarge"
+                                android:layout_margin="@dimen/spacing_middle"
+                                android:src="@drawable/ic_phone_pri_dark"
+                                android:contentDescription="@string/date_icon_content_description"/>
+
+                        <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="@dimen/spacing_medium"
+                                android:text='@{PersonDebt.getPerson.phoneNumber}'
+                                tools:text="0703811153"
+                                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                                android:textColor="@color/material_grey_600"/>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+
+            <LinearLayout
+                    android:id="@+id/cv_payments"
+                    android:visibility="visible"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/spacing_medium"
+                        android:layout_marginLeft="@dimen/spacing_large"
+                        android:layout_marginRight="@dimen/spacing_large"
+                        android:layout_marginTop="@dimen/spacing_large"
+                        android:text="Payments"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+                        android:textColor="@color/material_grey_800"/>
+
+                <include
+                        android:id="@+id/total_amount_layout"
+                        layout="@layout/total_amount_layout_content"/>
+                <View
+                        android:layout_width="match_parent"
+                        android:layout_height="2dp"
+                        android:background="@color/grey_soft"/>
+
+                <android.support.v7.widget.RecyclerView
+                        android:id="@+id/rv_payments"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+</layout>

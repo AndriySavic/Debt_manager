@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <RelativeLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        <include
+                android:id="@+id/total_amount_layout"
+                layout="@layout/total_amount_layout_content"/>
+
+        <android.support.v7.widget.RecyclerView
+                android:id="@+id/rv_oweme"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/total_amount_layout"/>
+
+        <TextView
+                android:id="@+id/tv_no_debts"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="No Debts"
+                android:textAppearance="@style/TextAppearance.AppCompat.Title"
+                android:visibility="visible"/>
+
+    </RelativeLayout>
+
+</layout>
